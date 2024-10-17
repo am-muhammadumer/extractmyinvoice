@@ -1,0 +1,109 @@
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Arial', sans-serif;
+background-color: #f8f9fa;
+color: #333;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.invoice-header h2 {
+text-align: center;
+font-size: 2em;
+margin-bottom: 20px;
+}
+
+.invoice-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds some spacing between the sections */
+}
+.invoice-data, .invoice {
+    flex: 1; /* Make both divs take up equal space */
+}
+/* Media query for screen widths 760px and below */
+@media (max-width: 760px) {
+    .invoice-layout {
+        flex-direction: column; /* Stack the divs vertically */
+    }
+    
+    .invoice-data {
+        order: 1; /* Make .invoice-data appear first */
+    }
+
+    .invoice {
+        order: 2; /* Make .invoice appear second */
+    }
+}
+
+.invoice-data {
+flex: 1;
+padding: 20px;
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-data ul {
+list-style: none;
+}
+
+.invoice-data ul li {
+cursor: pointer;
+padding: 15px;
+margin-bottom: 10px;
+background-color: #f0f0f0;
+border-radius: 6px;
+transition: background-color 0.3s ease, color 0.3s ease;
+font-size: 1.1em;
+}
+
+.invoice-data ul li {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.invoice-data ul li:hover {
+    background-color: #0275d8; /* Match the primary button color */
+    color: white; /* Change text color to white */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.invoice {
+flex: 2;
+padding: 20px;
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-section {
+padding: 10px;
+margin-bottom: 20px;
+transition: background-color 0.3s ease;
+}
+
+/* Applying the original hover styling */
+.highlight-section .highlighted {
+background-color: #ffff99; /* Light yellow background to highlight */
+}
+
+.highlight-section table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 10px;
+}
+
+.highlight-section table th, .highlight-section table td {
+padding: 10px;
+border: 1px solid #ddd;
+}

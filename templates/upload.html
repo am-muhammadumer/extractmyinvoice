@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Invoices/Receipts & Images{% endblock %}
+
+{% block content %}
+    <h3 class="text-center">Upload Invoices / Receipts & Images</h3>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="/upload" method="POST" enctype="multipart/form-data" id="upload-form">
+                <div class="mb-3">
+                    <label for="files" class="form-label">Upload Invoices & Receipts (PDF, DOCX, Images)</label>
+                    <input class="form-control" type="file" name="files[]" multiple id="file-input" accept=".pdf,.docx,.jpg,.jpeg,.png,.gif">
+                </div>
+                <div class="mb-3">
+                    <label for="job_name" class="form-label">Requirements</label>
+                    <textarea class="form-control" id="job_name" name="job_name" placeholder="Enter Your Requirements" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="file_format" class="form-label">File Format</label>
+                    <select class="form-select form-select-lg" id="file_format" name="file_format" required>
+                        <option value="" disabled selected>Select a file format</option>
+                        <option value="excel">Excel (.xlsx)</option>
+                        <option value="csv">CSV (.csv)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="preview" class="form-label">Preview Images</label>
+                    <div id="image-preview" class="d-flex flex-wrap"></div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Import Files</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            const files = event.target.files;
+            const previewContainer = document.getElementById('image-preview');
+            previewContainer.innerHTML = ""; 
+
+            Array.from(files).forEach(file => {
+                if (file.type.startsWith("image/")) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = document.createElement("img");
+                        img.src = e.target.result;
+                        img.style.height = "100px";
+                        img.style.margin = "10px";
+                        previewContainer.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+{% endblock %}

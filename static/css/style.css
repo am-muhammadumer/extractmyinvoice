@@ -1,0 +1,94 @@
+body {
+    background-color: #f4f7fc;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h3 {
+    color: #6f42c1;
+}
+
+.btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+#image-preview img {
+    max-width: 100px;
+    margin-right: 10px;
+}
+body {
+    background-color: #f4f7fc;
+}
+
+.card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h3 {
+    color: #6f42c1;
+}
+
+.btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+a {
+    color: #6f42c1;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Common styles for all pages */
+.navbar {
+    background-color: #000;
+}
+.navbar-brand, .nav-link {
+    color: #fff !important;
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+.navbar-toggler-icon {
+    color: #fff;
+}
+.nav-link:hover {
+    color: #f8f9fa !important;
+    text-decoration: underline;
+}
+.container {
+    margin-top: 50px;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+/* Adjusting spacing for navbar items */
+.navbar-nav .nav-item {
+    margin-left: 15px;
+}
+/* Footer spacing if needed */
+footer {
+    margin-top: 50px;
+}
+
+#logo_container img{
+    margin: 0px 50px;
+    width: 50px;
+    height: auto;
+    scale: 6;
+}

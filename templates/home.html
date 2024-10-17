@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block title %}Invoice Extraction - Excel CSV{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<!-- Header Section -->
+<div class="header-section text-center py-5 bg-light">
+    <h1 class="display-4 font-weight-bold">Invoice Extraction - Excel CSV</h1>
+    <p class="lead">Easily extract data from invoices and export to Excel or CSV format</p>
+
+    <!-- Anchor tag for redirecting to Invoices page -->
+    <a href="/upload" class="btn btn-primary btn-lg shadow-sm rounded-pill">
+        Get Started with Invoices
+    </a>
+</div>
+
+
+    <div class="container">
+        <div class="invoice-header">
+            <h2>What is Invoice OCR?</h2>
+        </div>
+    
+        <div class="invoice-layout">
+            <div class="invoice-data">
+                <ul>
+                    <li class="highlight-trigger" data-target="invoice-number-value">Invoice Number</li>
+                    <li class="highlight-trigger" data-target="invoice-date-value">Date</li>
+                    <li class="highlight-trigger" data-target="due-date-value">Due Date</li>
+                    <li class="highlight-trigger" data-target="invoice-items-table">Table Items</li>
+                    <li class="highlight-trigger" data-target="total-value">Total</li>
+                </ul>
+            </div>
+    
+            <div class="invoice">
+                <div class="highlight-section">
+                    <p><strong>Invoice number:</strong> <span id="invoice-number-value">117-44332</span></p>
+                </div>
+                <div class="highlight-section">
+                    <p><strong>Date:</strong> <span id="invoice-date-value">December 8, 2023</span></p>
+                    <p><strong>Due Date:</strong> <span id="due-date-value">January 8, 2024</span></p>
+                </div>
+                <div class="highlight-section">
+                    <p><strong>Bill By:</strong> Doe John</p>
+                    <p>Address: 1111, Flemming St, Yellow City, AT 1121</p>
+                </div>
+                <div class="highlight-section">
+                    <table id="invoice-items-table">
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                        <tr>
+                            <td>Fuel Plastic Jug (10 gallons)</td>
+                            <td>01</td>
+                            <td>$34.00</td>
+                            <td>$34.00</td>
+                        </tr>
+                        <tr>
+                            <td>Gas Hose (5 feet)</td>
+                            <td>01</td>
+                            <td>$15.00</td>
+                            <td>$15.00</td>
+                        </tr>
+                        <tr>
+                            <td>Aluminum Screw (4 inches)</td>
+                            <td>100</td>
+                            <td>$0.87</td>
+                            <td>$87.00</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="highlight-section">
+                    <p><strong>Subtotal:</strong> $136.00</p>
+                    <p><strong>Additional Charges (Tax 7%):</strong> $16.32</p>
+                    <p><strong>Total:</strong> <span id="total-value">$147.32</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Section -->
+    <div class="video-section text-center py-5 bg-dark text-light">
+        <h2>Leverage AI Invoice OCR for Your Business</h2>
+        <p>Watch how our AI technology can revolutionize your invoice processing, saving time and reducing errors.</p>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/your_video_link_here" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    <!-- Professional Button Style Anchor Tag - Centered -->
+    <div class="text-center mt-4">
+        <a href="/upload" class="btn btn-primary btn-lg shadow-sm rounded-pill me-2">
+            <span class="fw-bold">Explore Invoices</span>
+        </a>
+    </div>
+    
+    <!-- Features Section -->
+    <div class="features-section py-5">
+        <div class="container features-section">
+            <h3 class="text-center mb-4">Why Choose Our AI Invoice Solution?</h3>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card p-4 mb-4 shadow">
+                        <h4 class="card-title">Accuracy</h4>
+                        <p class="card-text">Our AI-driven OCR technology ensures 99.9% accuracy, minimizing the risk of errors in your invoices.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 mb-4 shadow">
+                        <h4 class="card-title">Efficiency</h4>
+                        <p class="card-text">Process hundreds of invoices in seconds, giving your business more time to focus on what matters.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 mb-4 shadow">
+                        <h4 class="card-title">Cost-Effective</h4>
+                        <p class="card-text">Our solution helps you save on manual labor costs, making it a cost-effective choice for businesses of any size.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-section text-center py-4 bg-light">
+        <p>For more information, please <a href="#" class="text-primary">contact us</a>.</p>
+        <p>&copy; 2024 Invoice Extraction | <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <script src="{{url_for('static', filename='js/home.js')}}"></script>
+{% endblock %}
+
