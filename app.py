@@ -14,7 +14,7 @@ UPLOAD_FOLDER = 'static/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Configure PostgreSQL Database
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:Umer8637.@localhost:5432/invoice_extractor"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://umer404:Umer8637.@@localhost/extractmyinvoice"
 app.config["SECRET_KEY"] = os.urandom(24)  # Generate a random secret key
 
 # Initialize SQLAlchemy
